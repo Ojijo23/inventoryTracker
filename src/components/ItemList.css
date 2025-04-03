@@ -1,0 +1,114 @@
+/* ===== BASE STYLES ===== */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .app-container {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  
+  /* ===== HEADER ===== */
+  h1 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 600;
+    font-size: 2.2rem;
+  }
+  
+  /* ===== TABLE STYLES ===== */
+  .item-list {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-top: 2rem;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th {
+    background-color: #3498db;
+    color: white;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.85rem;
+  }
+  
+  th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  tr:hover {
+    background-color: #f5f5f5;
+  }
+  
+  /* ===== BUTTON STYLES ===== */
+  button {
+    border: none;
+    border-radius: 4px;
+    padding: 6px 12px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  button:hover {
+    transform: translateY(-1px); /* Subtle "lift" effect */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional */
+  }
+  
+  .edit-btn {
+    background-color: #f39c12;
+    color: white;
+    margin-right: 8px;
+  }
+  
+  .delete-btn {
+    background-color: #e74c3c;
+    color: white;
+  }
+  
+  /* ===== LOW STOCK WARNING ===== */
+  .low-stock {
+    background-color: #fff8e1; /* Light yellow */
+    border-left: 3px solid #ffa000; /* Orange accent */
+  }
+  
+  .low-stock td:first-child {
+    border-left: 3px solid #ffa000; /* Orange accent */
+  }
+  
+  /* ===== RESPONSIVE DESIGN ===== */
+  @media (max-width: 768px) {
+    th, td {
+      padding: 8px 10px;
+    }
+    
+    button {
+      padding: 4px 8px;
+      font-size: 0.8rem;
+    }
+  }
+
+  .item-list {
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .item-list:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
