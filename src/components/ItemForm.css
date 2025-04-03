@@ -1,0 +1,54 @@
+/* ItemForm.css */
+
+/* Form Container */
+.inventory-form {
+    background-color: #f3f4f6; /* Light gray background */
+    padding: 1rem;            /* 16px padding */
+    border-radius: 0.5rem;    /* Rounded corners */
+    margin-bottom: 2rem;      /* Space below the form */
+  }
+  
+  /* Form Title */
+  .form-title {
+    font-size: 1.25rem;       /* 20px font size */
+    font-weight: bold;        /* Bold text */
+    margin-bottom: 1rem;      /* Space below title */
+  }
+  
+  /* Input Fields */
+  .form-input {
+    width: 70%;             /* Full width */
+    padding: 0.5rem;         /* 8px padding */
+    border: 1px solid red; /* Light gray border */
+    border-radius: 0.25rem;  /* Slightly rounded corners */
+    margin-bottom: 1rem;     /* Space between inputs */
+  }
+  
+  /* Submit Button */
+  .submit-btn {
+    background-color: #3b82f6; /* Blue background */
+    color: black;             /* White text */
+    padding: 0.5rem 1rem;     /* 8px top/bottom, 16px left/right */
+    border-radius: 0.25rem;   /* Rounded corners */
+    border: none;             /* No border */
+    cursor: pointer;          /* Pointer cursor on hover */
+  }
+  
+  /* Button Hover Effect */
+  .submit-btn:hover {
+    background-color: green; /* Darker blue on hover */
+  }
+
+  /* styles.css */
+.form-select {
+    width: 73%;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    border: 1px solid red;
+    border-radius: 4px;
+    background-color: black;
+  }
+
+  .form-title{
+    color: black;
+  }
