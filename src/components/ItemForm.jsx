@@ -32,6 +32,7 @@ const ItemForm = ({ onAddItem }) => {
             value={item.name}
             onChange={(e) => setItem({ ...item, name: e.target.value })}
             required
+            placeholder="Enter Item Name"
           />
         </div>
 
@@ -56,7 +57,7 @@ const ItemForm = ({ onAddItem }) => {
             className="form-input"
             value={item.price}
             onChange={(e) => setItem({ ...item, price: parseFloat(e.target.valueAsNumber) })}
-            placeholder="Enter price"
+            placeholder="Enter Price"
             
             step="0.01"
           />

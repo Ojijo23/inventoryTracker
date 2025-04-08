@@ -35,6 +35,7 @@ const ItemList = ({ items, onDelete, onEdit }) => {
           ))}
         </tbody>
       </table>
+      {items.length === 0 && <p>No items found.</p>}
     </div>
   );
 };
