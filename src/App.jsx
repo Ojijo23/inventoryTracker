@@ -3,29 +3,29 @@ import "./App.css";
 import ItemForm from "./components/ItemForm.jsx";
 import ItemList from "./components/ItemList.jsx";
 import SearchBar from "./components/SearchBar.jsx";
+import EditModal from "./components/EditModal.jsx";
 
 function App() {
   const [items, setItems] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const [editingItem, setEditingItem] = useState(null);
 
   const handleAddItem = (newItem) => {
-    setItems([...items, { ...newItem, id: Date.now }]);
+    setItems([...items, { ...newItem, id: Date.now() }]);
   };
 
   const handleDeleteItem = (id) => {
     setItems(items.filter((item) => item.id !== id));
   };
 
-  const handleEditItem = (id) => {
-    const newName = prompt("Enter the new name: ");
-    if (newName) {
-      setItems(
-        items.map((item) =>
-          item.id === id ? { ...item, name: newName } : item
-        )
-      );
-    }
+  const handleUpdateItem = (updatedItem) => {
+    setItems(
+      items.map((item) => (item.id === updatedItem.id ? updatedItem : item))
+    );
+    setEditingItem(null);
   };
+
+ 
 
   const filteredItems = items.filter((item) =>
     item.name.toLowerCase().includes(searchTerm.toLowerCase())
@@ -37,14 +37,21 @@ function App() {
 
       <ItemForm onAddItem={handleAddItem} />
 
-      <SearchBar  searchTerm={searchTerm} onSearch={setSearchTerm} />
+      <SearchBar searchTerm={searchTerm} onSearch={setSearchTerm} />
 
       <ItemList
         items={filteredItems}
-        // items={items}
         onDelete={handleDeleteItem}
-        onEdit={handleEditItem}
+        onEdit={setEditingItem}
       />
+
+      {editingItem && (
+        <EditModal
+          item={editingItem}
+          onSave={handleUpdateItem}
+          onClose={() => setEditingItem(null)}
+        />
+      )}
     </div>
   );
 }

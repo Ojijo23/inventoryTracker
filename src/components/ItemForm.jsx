@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./itemForm.css";
+import "../styles/itemForm.css";
 
 const ItemForm = ({ onAddItem }) => {
   const [item, setItem] = useState({

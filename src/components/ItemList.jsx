@@ -1,7 +1,18 @@
 import react from "react";
-import "./ItemList.css";
+import "../styles/ItemList.css";
 
-const ItemList = ({ items, onDelete, onEdit }) => {
+const ItemList = ({ items, isLoading, onDelete, onEdit }) => {
+  if (isLoading) {
+    return (
+      <div className="item-list">
+        {[...Array(5)].map((_, i) => (
+          <div key={i} className="skeleton-row" />
+        ))}
+      </div>
+    );
+  }
+
+  // const ItemList = ({ items, onDelete, onEdit }) => {
   return (
     <div className="item-list">
       <h2>Current Inventory</h2>
@@ -24,7 +35,7 @@ const ItemList = ({ items, onDelete, onEdit }) => {
               <td>${item.price.toFixed(2)}</td>
               <td>{item.category}</td>
               <td>
-                <button className="edit-btn" onClick={() => onEdit(item.id)}>
+                <button className="edit-btn" onClick={() => onEdit(item)}>
                   Edit
                 </button>
                 <button className="delete-btn" onClick={() => onDelete(item.id)}>
@@ -39,5 +50,7 @@ const ItemList = ({ items, onDelete, onEdit }) => {
     </div>
   );
 };
+
+
 
 export default ItemList;

@@ -112,3 +112,16 @@ body {
     transform: translateY(-2px);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   }
+  /* Skeleton Loading */
+.skeleton-row {
+  height: 50px;
+  background: #eee;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
